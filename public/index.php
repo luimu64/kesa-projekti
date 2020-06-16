@@ -4,6 +4,7 @@ set_include_path(dirname(__FILE__) . '/../');
 
 require_once 'router/Request.php';
 require_once 'router/Router.php';
+require_once 'database/connection.php';
 // require_once 'libraries/helpers.php';
 require_once 'controllers/usercontroller.php';
 require_once 'controllers/admincontroller.php';
