@@ -7,3 +7,10 @@ function indexController() {
     $allinfo = getAllPostsInfo($pdo);
     require "views/frontpage.view.php";
 }
+
+
+function upvoteController() {
+    $pdo = connectDB();
+    addUpvote($pdo);
+    require "views/frontpage.view.php";
+}

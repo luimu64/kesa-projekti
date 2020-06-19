@@ -8,7 +8,7 @@ require "public/partials/header.php";
 
 <div class="bg-particles" id="particles-js"></div>
 <div class="row">
-  <div class="col-sm-2"></div>
+  <div class="col-sm-2 filler"></div>
   <div class="col-sm-8">
     <?php
 
@@ -17,15 +17,20 @@ require "public/partials/header.php";
     <div class="posts-box">
     <p><?=$values["writer"]?></p>
     <p><?=$values["content"]?></p>
-    <img class="upvote" src="img/arrow.png" onclick="this.src='img/arrow_full.png';" alt="">
-    <p><?=$values["likes"]?></p>
+      <div class="votebox">
+        <form action="post">
+          <input type="hidden" name="<?=$values["id"]?>">
+          <input class="upvote" type="image" src="img/arrow.png" alt="upvote_btn">
+        </form>
+        <p class="upvote-amount"><?=$values["likes"]?></p>
+      </div>
     </div>
 
     <?php
     }
     ?>
     </div>
-  <div class="col-sm-2"></div>
+  <div class="col-sm-2 filler"></div>
 </div> 
 
 <script>
