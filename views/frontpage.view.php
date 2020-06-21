@@ -18,8 +18,8 @@ require "public/partials/header.php";
     <p><?=$values["writer"]?></p>
     <p><?=$values["content"]?></p>
       <div class="votebox">
-        <form action="post">
-          <input type="hidden" name="<?=$values["id"]?>">
+        <form action="/" method="post">
+          <input type="hidden" name="id" value="<?=$values["id"]?>">
           <input class="upvote" type="image" src="img/arrow.png" alt="upvote_btn">
         </form>
         <p class="upvote-amount"><?=$values["likes"]?></p>

@@ -7,8 +7,9 @@ function getAllPostsInfo($pdo) {
 }
 
 function addUpvote($pdo, $id) {
+    $data = [$id];
     $sql = "UPDATE posts SET likes = likes + 1 WHERE id = ?";
     $stm = $pdo->prepare($sql);
-    return ($stm->execute($id));
+    return ($stm->execute($data));
 }
 ?>

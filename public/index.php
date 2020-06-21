@@ -14,6 +14,9 @@ $router = new Router(new Request);
 $router->get('/', function($request) {
   indexController();
 });
+$router->post('/', function($request) {
+  upvoteController();
+});
 // $router->get('/products', function($request) {
 //   productsController();
 // });
