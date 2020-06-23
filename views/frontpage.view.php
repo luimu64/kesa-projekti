@@ -28,7 +28,6 @@ require "public/partials/header.php";
     </div>
   <div class="col-sm-2 filler"></div>
 </div> 
-
 <?php
 require "public/partials/footer.php";
 ?>
