@@ -28,3 +28,9 @@
 .votebox {
     display: flex;
 }
+.post-input {
+    background-color: #343A40;
+    color: white;
+    width: 100%;
+    margin-top: 1em;
+}

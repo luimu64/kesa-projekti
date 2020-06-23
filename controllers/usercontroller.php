@@ -18,3 +18,17 @@ function upvoteController() {
     $sorted = array_sort($allinfo, "likes");
     require "views/frontpage.view.php";
 }
+
+function postController() {
+    if (isset($_POST['writer'], $_POST['content'])) {
+        $pdo = connectDB();
+        try {
+            addPost($pdo, $_POST['writer'], $_POST['content']);
+            header("Location: /"); 
+        } catch (PDOException $e){
+            echo "Virhe tietokantaan tallennettaessa: " . $e->getMessage();
+        }
+    } else {
+        require "views/newpost.view.php";
+    }
+}

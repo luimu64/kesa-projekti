@@ -17,27 +17,12 @@ $router->get('/', function($request) {
 $router->post('/', function($request) {
   upvoteController();
 });
-// $router->get('/products', function($request) {
-//   productsController();
-// });
-// $router->get('/register', function($request) {
-//   registeringController();
-// });
-// $router->post('/register', function($request) {
-//   registeringController();
-// });
-
-// $router->get('/login', function($request) {
-//   loginController();
-// });
-
-// $router->post('/login', function($request) {
-//   loginController();
-// });
-
-// $router->get('/logout', function($request) {
-//   logoutController();
-// });
+$router->get('/add_post', function($request) {
+  postController();
+});
+$router->post('/add_post', function($request) {
+  postController();
+});
 
 // $router->get('/reserve', function($request) {
 //   if(isLoggedIn()){

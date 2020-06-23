@@ -1,9 +1,5 @@
 <?php
-//if(isLoggedIn()){
-//   require "public/partials/loggedhead.php";
-// } else {
 require "public/partials/header.php";
-//}
 ?>
 
 <div class="bg-particles" id="particles-js"></div>
@@ -33,9 +29,6 @@ require "public/partials/header.php";
   <div class="col-sm-2 filler"></div>
 </div> 
 
-<script>
-    particlesJS.load('particles-js', 'vendor/pjsconf.json',
-    function(){
-        console.log('particles.json loaded...')
-    })
-</script>
+<?php
+require "public/partials/footer.php";
+?>

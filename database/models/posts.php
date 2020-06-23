@@ -12,4 +12,14 @@ function addUpvote($pdo, $id) {
     $stm = $pdo->prepare($sql);
     return ($stm->execute($data));
 }
+
+function addPost($pdo, $writer, $content) {
+    $writer = cleanUpInput($writer);
+    $content =  cleanUpInput($content);
+    $data = [$writer, $content];
+    $sql = "INSERT INTO posts (writer, content) VALUES(?,?)";
+    $stm=$pdo->prepare($sql);
+    return ($stm->execute($data));
+} 
+
 ?>
