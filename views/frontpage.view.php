@@ -12,7 +12,7 @@ require "public/partials/header.php";
   <div class="col-sm-8">
     <?php
 
-    foreach ($allinfo as $values) {
+    foreach ($sorted as $values) {
     ?>    
     <div class="posts-box">
     <p><?=$values["writer"]?></p>
