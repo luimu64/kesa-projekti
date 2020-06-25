@@ -12,16 +12,36 @@ require_once 'controllers/admincontroller.php';
 $router = new Router(new Request);
 
 $router->get('/', function($request) {
-  indexController();
+   if(isLoggedIn()){
+      adminFrontController();
+   } else {
+      indexController();
+   }
 });
+
 $router->post('/', function($request) {
-  upvoteController();
+  if(isLoggedIn()){
+    adminFrontController();
+  } else {
+    upvoteController();
+  }
 });
+
 $router->get('/add_post', function($request) {
   postController();
 });
 $router->post('/add_post', function($request) {
   postController();
+});
+$router->get('/admin', function($request) {
+  adminController();
+});
+$router->post('/admin', function($request) {
+  adminController();
+});
+
+$router->get('/logout', function($request) {
+  logoutController();
 });
 
 // $router->get('/reserve', function($request) {
@@ -52,4 +72,5 @@ $router->post('/add_post', function($request) {
 // $router->get('/gdpr', function($request) {
 //   gdprController();
 //});
+
 ?>

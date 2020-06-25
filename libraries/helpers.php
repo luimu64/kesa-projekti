@@ -19,7 +19,7 @@ function hashPassword($password){
 }
 
 function isLoggedIn(){
-    if(isset($_SESSION['username'], $_SESSION['userid']) && ($_SESSION['session_id'] == session_id())){
+    if(isset($_SESSION['username'], $_SESSION['id']) && ($_SESSION['session_id'] == session_id())){
         return true;
     } else {
         return false;

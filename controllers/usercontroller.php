@@ -32,3 +32,5 @@ function postController() {
         require "views/newpost.view.php";
     }
 }
+
+?>
