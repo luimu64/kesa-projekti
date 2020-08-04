@@ -62,4 +62,9 @@ function array_sort($array, $on, $order=SORT_DESC)
 
     return $new_array;
 }
+
+//https://stackoverflow.com/questions/4356289/php-random-string-generator
+function generateRandomString($length = 10) {
+    return substr(str_shuffle(MD5(microtime())), 0, $length);;
+}
 ?>

@@ -1,8 +1,10 @@
 <?php
-require "public/partials/adminheader.php";
+$currentsite = "posts";
+if (isLoggedIn()) require "public/partials/adminheader.php";
+else require "public/partials/header.php";
 ?>
 
-<div class="bg-adminparticles" id="particles-js"></div>
+<div class="bg-particles" id="particles-js"></div>
 <div class="row">
   <div class="col-sm-2 filler"></div>
   <div class="col-sm-8">
@@ -13,6 +15,13 @@ require "public/partials/adminheader.php";
     <div class="posts-box">
     <p><?=$values["writer"]?></p>
     <p><?=$values["content"]?></p>
+    <?php
+    if ($values["img"] != "") {
+    ?>
+      <img class="post_img" src="<?=$values["img"]?>" alt="Post's image">
+    <?php
+    };
+    ?>
       <div class="votebox">
         <form action="/" method="post">
           <input type="hidden" name="id" value="<?=$values["id"]?>">
@@ -32,6 +41,8 @@ require "public/partials/adminheader.php";
     </div>
   <div class="col-sm-2 filler"></div>
 </div> 
+
 <?php
-require "public/partials/adminfooter.php";
+if (isLoggedIn()) require "public/partials/adminfooter.php";
+else require "public/partials/footer.php";
 ?>

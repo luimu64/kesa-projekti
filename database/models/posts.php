@@ -13,13 +13,22 @@ function addUpvote($pdo, $id) {
     return ($stm->execute($data));
 }
 
-function addPost($pdo, $writer, $content) {
-    $writer = cleanUpInput($writer);
-    $content =  cleanUpInput($content);
-    $data = [$writer, $content];
-    $sql = "INSERT INTO posts (writer, content) VALUES(?,?)";
-    $stm=$pdo->prepare($sql);
-    return ($stm->execute($data));
+function addPost($pdo, $writer, $content, $img = "") {
+    if ($img == "") {
+        $writer = cleanUpInput($writer);
+        $content =  cleanUpInput($content);
+        $data = [$writer, $content];
+        $sql = "INSERT INTO posts (writer, content) VALUES(?,?)";
+        $stm=$pdo->prepare($sql);
+        return ($stm->execute($data));
+    } else {
+        $writer = cleanUpInput($writer);
+        $content =  cleanUpInput($content);
+        $data = [$writer, $content, $img];
+        $sql = "INSERT INTO posts (writer, content, img) VALUES(?,?,?)";
+        $stm=$pdo->prepare($sql);
+        return ($stm->execute($data));
+    }
 } 
 
 ?>

@@ -8,6 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script type="text/javascript" src="vendor/particles.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="stylesheet" href="css/styles.css">
     <title>Thonk</title>
 </head>
@@ -22,10 +23,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-            <a class="nav-link" href="/">Posts<span class="sr-only">(current)</span></a>
+            <a class="nav-link <?php if ($currentsite == 'posts') echo 'active';?>" href="/">Posts<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/add_post">Add your own!</a>
+            <a class="nav-link <?php if ($currentsite == 'newpost') echo 'active';?>" href="/add_post">Add your own!</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="/logout">Logout</a>

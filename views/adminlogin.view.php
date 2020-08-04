@@ -1,5 +1,6 @@
 <?php
-require "public/partials/header.php";
+if (isLoggedIn()) require "public/partials/adminheader.php";
+else require "public/partials/header.php";
 ?>
 <div class="bg-particles" id="particles-js"></div>
 <div class="row">
@@ -15,5 +16,6 @@ require "public/partials/header.php";
 </div> 
 
 <?php
-require "public/partials/footer.php";
+if (isLoggedIn()) require "public/partials/adminfooter.php";
+else require "public/partials/footer.php";
 ?>

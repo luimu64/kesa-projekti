@@ -1,6 +1,7 @@
 <?php
 session_start();
 set_include_path(dirname(__FILE__) . '/../');
+define ('PUBLIC_ROOT', realpath(dirname(__FILE__))."/");
 
 require_once 'router/Request.php';
 require_once 'router/Router.php';
@@ -30,12 +31,15 @@ $router->post('/', function($request) {
 $router->get('/add_post', function($request) {
   postController();
 });
+
 $router->post('/add_post', function($request) {
   postController();
 });
+
 $router->get('/admin', function($request) {
   adminController();
 });
+
 $router->post('/admin', function($request) {
   adminController();
 });
@@ -44,33 +48,5 @@ $router->get('/logout', function($request) {
   logoutController();
 });
 
-// $router->get('/reserve', function($request) {
-//   if(isLoggedIn()){
-//     reservingController();
-//   } else {
-//     loginController();
-//   }
-// });
-// $router->post('/reserve', function($request) {
-//     reservingController();
-// });
-// $router->get('/add_product', function($request) {
-//   if(isLoggedIn()){
-//     addproductController();
-//   } else {
-//     loginController();
-//   }
-// });
-// $router->post('/add_product', function($request) {
-//   if(isLoggedIn()){
-//     addproductController();
-//   } else {
-//     loginController();
-//   }
-// });
-
-// $router->get('/gdpr', function($request) {
-//   gdprController();
-//});
 
 ?>
