@@ -23,11 +23,17 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-            <a class="nav-link <?php if ($currentsite == 'posts') echo 'active';?>" href="/">Posts<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link <?php if ($currentsite == 'newpost') echo 'active';?>" href="/add_post">Add your own!</a>
-        </li>
+            <li class="nav-item">
+                <a class="nav-link <?php if ($currentsite == 'posts') echo 'active';?>" href="/">Posts<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link <?php if ($currentsite == 'newpost') echo 'active';?>" href="/add_post">Add your own!</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link right-nav-item <?php if ($currentsite == "admin") echo 'active'?>" href="/admin">Admin login</a>
+            </li>
+        </ul>
     </div>
     </nav>

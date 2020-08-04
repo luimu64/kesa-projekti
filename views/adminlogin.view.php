@@ -1,4 +1,5 @@
 <?php
+$currentsite = "admin";
 if (isLoggedIn()) require "public/partials/adminheader.php";
 else require "public/partials/header.php";
 ?>
