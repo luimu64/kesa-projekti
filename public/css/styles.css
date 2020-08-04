@@ -15,8 +15,7 @@
 }
 
 .posts-box {
-    background-color: #343A40;
-    opacity: 0.9;
+    background-color: rgba(52,58,64, 0.9);
     color: white;
     padding: 1em;
     margin: auto;
